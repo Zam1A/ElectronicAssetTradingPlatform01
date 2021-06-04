@@ -1,0 +1,39 @@
+package net.wms.bean;
+public class User {
+	private int id;
+	private String username; 
+	private String userpwd;
+	private	String integrate;
+
+	private String flag;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getusername() {
+		return username;
+	}
+	public void setusername(String username) {
+		this.username = username;
+	}
+	public String getuserpwd() {
+		return userpwd;
+	}
+	public void setuserpwd(String userpwd) {
+		this.userpwd = userpwd;
+	}
+	public String getFlag() {
+		return flag;
+	}
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+	public String getIntegrate() {
+		return integrate;
+	}
+	public void setIntegrate(String integrate) {
+		this.integrate = integrate;
+	}
+}
