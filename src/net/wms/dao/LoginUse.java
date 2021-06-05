@@ -5,15 +5,15 @@ import java.sql.SQLException;
 import net.wms.bean.User;
 
 public interface LoginUse {
-		//²éÑ¯
+		//ï¿½ï¿½Ñ¯
 		public boolean 
 		Query(User user,String sql) throws SQLException;
-		//Ôö¼Ó
+
 		public void 
 		Add(User user,String sql)throws SQLException;
-		//É¾³ý
+
 		public void Delete(User user,String sql)throws SQLException;
-		//ÐÞ¸Ä
+		//ï¿½Þ¸ï¿½
 		public void 
 		Update(User user,String sql)throws SQLException;
 }

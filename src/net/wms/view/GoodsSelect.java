@@ -28,9 +28,9 @@ public class GoodsSelect extends IndexAdmin{
 		final Vector c = new Vector();
 
 		c.add("id");
-		c.add("goodsname");
-		c.add("goodstype");
-		c.add("goodsprice");
+		c.add("name");
+		c.add("type");
+		c.add("price");
 		c.add("user");
 		final GoodsmanagementImp g = new GoodsmanagementImp();
 
