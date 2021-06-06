@@ -22,7 +22,7 @@ public class Useradd extends IndexAdmin{
 
 	User user = new User();
 	
-	//���캯��
+
 	public Useradd(String name) {
 		super(name);
 		init();
@@ -31,8 +31,8 @@ public class Useradd extends IndexAdmin{
 	
 	public void init() {
 
-		Font d = new Font("����", Font.BOLD, 24);
-		Font f = new Font("����", Font.BOLD, 18);
+		Font d = new Font("", Font.BOLD, 24);
+		Font f = new Font("", Font.BOLD, 18);
 
 		JLabel usertitle = new JLabel("add user");
 
@@ -97,7 +97,7 @@ public class Useradd extends IndexAdmin{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//����û�����������û�����
+
 				name.setText("");
 				pwd.setText("");
 				style.setText("");
@@ -121,14 +121,14 @@ public class Useradd extends IndexAdmin{
 
 					LoginUseImp l = new LoginUseImp();
 					try {
-						//ִ��sql���
+
 						l.Add(user, "insert into users(username,userpwd,flag,integrate) values(?,?,?,?)");
-						//����ı���
+
 						name.setText("");
 						pwd.setText("");
 						style.setText("");
 						integrate.setText("");
-						//��ӳɹ���ʾ��
+
 						JOptionPane.showMessageDialog(null, "successful");
 					} catch (SQLException e1) {
 						e1.printStackTrace();

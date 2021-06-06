@@ -11,14 +11,14 @@ import net.wms.util.DB;
 
 public class GoodsmanagementImp implements Goodsmanagement{
 			public static Vector vec = new Vector();
-			//��ȡ���ݿ�����
+
 			Connection conn = DB.getConnection();
 
 			public void Query(String sql) throws SQLException {
 				// TODO Auto-generated method stub
-				//����SQL���
+
 				PreparedStatement pra = conn.prepareStatement(sql);
-				//��������
+
 				ResultSet rs = pra.executeQuery();
 				vec.removeAllElements();
 				while(rs.next()) {
@@ -34,11 +34,11 @@ public class GoodsmanagementImp implements Goodsmanagement{
 			
 			public boolean Query1(Goods goods, String sql) throws SQLException {
 				// TODO Auto-generated method stub
-				//����SQL���
+
 				PreparedStatement pra = conn.prepareStatement(sql);
-				//��������
+
 				ResultSet rs = pra.executeQuery();
-				//���������
+
 				return false;
 			}
 			

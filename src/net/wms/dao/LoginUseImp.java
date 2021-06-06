@@ -13,29 +13,29 @@ import net.wms.util.DB;
 
 public class LoginUseImp implements LoginUse{
 		public static Vector vec = new Vector();
-		//��ȡ���ݿ�����
+
 		Connection conn = DB.getConnection();
-		//��ѯ����
+
 		public boolean Query(User user, String sql) throws SQLException {
 			// TODO Auto-generated method stub
-			//����SQL���
+
 			PreparedStatement pra = conn.prepareStatement(sql);
 			pra.setString(1, user.getusername());
 			pra.setString(2, user.getuserpwd());
-			//��������
+
 			ResultSet rs = pra.executeQuery();
-			//���������
+
 			while(rs.next()){
 				
-				//��ȡ���ݿ����ֶ�
+
 				String name = rs.getString("username");
 				String pass = rs.getString("userpwd");
-				//�ж��û����������Ƿ�������ݿ�����
+
 				if(name.equals(user.getusername()) && pass.equals(user.getuserpwd())) {
-					//�������ݷ��� true
+
 					return true;
 				}else{
-					//���������ݷ���false
+
 					return false;
 				}
 			}
@@ -44,28 +44,28 @@ public class LoginUseImp implements LoginUse{
 		
 		public boolean Query1(User user, String sql) throws SQLException {
 			// TODO Auto-generated method stub
-			//����SQL���
+
 			PreparedStatement pra = conn.prepareStatement(sql);
-			//��������
+
 			ResultSet rs = pra.executeQuery();
-			//���������
+
 			while(rs.next()){
 				
-				//��ȡ���ݿ����ֶ�
+
 				String name = rs.getString("username");
 				String pass = rs.getString("userpwd");
 				String flag = rs.getString("flag");
 				String integrate = rs.getString("integrate");
-				//�ж��û����������Ƿ�������ݿ�����
+
 				if(name.equals(user.getusername()) ) {
-					//�������ݷ��� true
+
 					user.setusername(name);
 					user.setuserpwd(pass);
 					user.setFlag(flag);
 					user.setIntegrate(integrate);
 					return true;
 				}else{
-					//���������ݷ���false
+
 					return false;
 				}
 			}

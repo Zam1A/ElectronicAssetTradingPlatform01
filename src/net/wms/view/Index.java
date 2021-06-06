@@ -52,15 +52,15 @@ public class Index {
 	}
 
 	private void init(String name) {
-		//初始化矿建index
+
 		index = new JFrame("welcome:"+name);
-		//设置框架大小和位置
+
 		index.setBounds(500, 100, 600, 500);
 		index.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//将菜单栏设置进框架
+
 		index.setJMenuBar(management);
 		index.setLayout(null);
-		//设置随机背景
+
 		((JComponent) index.getContentPane()).setOpaque(false);
 		ImageIcon img = null;
 		Random r = new Random();
@@ -91,8 +91,8 @@ public class Index {
 	}
 
 	public void indexadmin() {
-		//初始化对象
-		Font f = new Font("楷体", Font.BOLD, 15);
+
+		Font f = new Font("", Font.BOLD, 15);
 		management = new JMenuBar();
 		user = new JMenu(" user");
 		user.setFont(f);

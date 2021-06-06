@@ -39,13 +39,13 @@ public class Goodslist extends Index {
     }
 
     public void init() {
-        Font t = new Font("楷体", Font.BOLD, 24);
-        final Font f = new Font("楷体", Font.BOLD, 15);
+        Font t = new Font("", Font.BOLD, 24);
+        final Font f = new Font("", Font.BOLD, 15);
         JLabel title = new JLabel("goodslist");
         title.setFont(t);
         title.setBounds(130, 40, 200, 40);
         final Vector c = new Vector();
-        //添加数据
+
         c.add("goodsid");
         c.add("name");
         c.add("type");

@@ -21,9 +21,9 @@ public class Storageselect extends IndexAdmin{
 	}
 	@SuppressWarnings("unchecked")
 	public void init() {
-		Font t = new Font("楷体",Font.BOLD, 24);
-		final Font f = new Font("楷体",Font.BOLD, 15);
-		JLabel title = new JLabel("仓库信息");
+		Font t = new Font("",Font.BOLD, 24);
+		final Font f = new Font("",Font.BOLD, 15);
+		JLabel title = new JLabel("orderlist");
 		title.setFont(t);
 		title.setBounds(230, 40, 100, 40);
 		Vector v = new Vector();
@@ -41,7 +41,7 @@ public class Storageselect extends IndexAdmin{
 		try {
 			s.Query("select * from storage");
 		} catch (SQLException e) {
-			// TODO 自动生成的 catch 块
+
 			e.printStackTrace();
 		}
 		index.add(title);

@@ -15,25 +15,25 @@ import net.wms.bean.User;
 import net.wms.dao.LoginUseImp;
 
 public class Userdelete extends IndexAdmin {
-	//�������ֶ���
+
 	JLabel name;
 	JLabel pwd;
 	JLabel style;
 	JTextField dname;
-	//ΪUser���ʼ������
+
 	User user = new User();
 	
-	//���캯��
+
 	public Userdelete(String name) {
 		super(name);
 		init();
 	}
 	
 	public void init() {
-		//��ʼ������
+
 		Font d = new Font("����", Font.BOLD, 24);
 		Font f = new Font("����", Font.BOLD, 18);
-		//��ʼ������
+
 		JLabel userdelete = new JLabel("DELUSER");
 		JLabel deletename = new JLabel("USERNAME");
 		dname = new JTextField();
@@ -46,7 +46,7 @@ public class Userdelete extends IndexAdmin {
 		style = new JLabel();
 		JButton submit = new JButton("OK");
 		JButton delete = new JButton("remove");
-		//���ö���
+
 		userdelete.setBounds(250, 30, 150, 40);
 		userdelete.setFont(d);
 		deletename.setBounds(120, 90, 150, 30);
@@ -69,7 +69,7 @@ public class Userdelete extends IndexAdmin {
 		submit.setFont(f);
 		delete.setBounds(250, 380, 80, 30);
 		delete.setFont(f);
-		//��Ӷ���
+
 		index.add(userdelete);
 		index.add(deletename);
 		index.add(dname);
@@ -82,17 +82,17 @@ public class Userdelete extends IndexAdmin {
 		index.add(userstyle);
 		index.add(delete);
 		
-		//Ϊȷ����ť��Ӽ����¼�
+
 		submit.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//���ı�����ȡ���û������ý�user������
+
 				user.setusername(dname.getText());
 				LoginUseImp l = new LoginUseImp();
 				boolean b;
 				try {
-					//ִ��sql���
+
 					b = l.Query1(user, "select * from users where username= '"+dname.getText()+"'");
 					if(b){
 						//�����ݿ��е�ֵ���ý��ı���
@@ -100,7 +100,7 @@ public class Userdelete extends IndexAdmin {
 						pwd.setText(user.getuserpwd());
 						style.setText(user.getFlag());
 					} else {
-						//δ���ҵ���ʾ��
+
 						JOptionPane.showMessageDialog(null,"select is null");
 					}
 				} catch (SQLException e1) {
@@ -109,20 +109,20 @@ public class Userdelete extends IndexAdmin {
 			}
 		});
 		
-		//Ϊɾ����ť��Ӽ����¼�
+
 		delete.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//��ѡ�е�������ӽ��ı���
+
 				user.setusername(dname.getText());
 				LoginUseImp l = new LoginUseImp();
 				try {
-					//ִ��ɾ����sql���
+
 					l.Delete(user, "delete from users where username='"+dname.getText()+"'");
 					JOptionPane.showMessageDialog(null, "success");
 				} catch (SQLException e1) {
-					// TODO �Զ����ɵ� catch ��
+
 					e1.printStackTrace();
 				}
 			}

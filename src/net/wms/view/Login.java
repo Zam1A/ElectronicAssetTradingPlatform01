@@ -72,14 +72,14 @@ public class Login {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(box.getSelectedItem().equals("admin")){
-					//���ñ�־����ֵ
+
 					user.setFlag("2");
 				}else{
 					user.setFlag("1");
 				}
 			}
 		});
-		//����¼��ť���ü����¼�
+
 		login.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

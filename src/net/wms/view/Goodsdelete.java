@@ -18,7 +18,7 @@ import net.wms.dao.GoodsmanagementImp;
 
 public class Goodsdelete extends Index{
 	int id ;
-	//声明表格
+
 	private JTable table;
   private  String ids;
 	public Goodsdelete(String name) {
@@ -33,7 +33,7 @@ public class Goodsdelete extends Index{
 		title.setFont(t);
 		title.setBounds(230, 40, 100, 40);
 		final Vector c = new Vector();
-		//添加数据
+
 		c.add("id");
 		c.add("goodsname");
 		c.add("goodstype");
@@ -46,27 +46,27 @@ public class Goodsdelete extends Index{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		//创建表格
+
 		table = new JTable(g.vec,c);
 		table.setFont(f);
 		table.getTableHeader().setFont(f);
-		//为表格添加鼠标单击事件
+
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// 获取表格中的ID
+
 				id = (int) table.getValueAt(
 						table.getSelectedRow(), 0);
 				System.out.println(id);
 				super.mouseClicked(e);
 			}
 		});
-		//创建Jscrollpane
+
 		final JScrollPane js = new JScrollPane(table);
 		js.setBounds(100, 120, 400, 200);
-		//创建删除按钮
+
 		final JButton delete = new JButton("remove");
-		//为按钮创建监听事件
+
 		delete.addActionListener(new ActionListener() {
 
 			@Override

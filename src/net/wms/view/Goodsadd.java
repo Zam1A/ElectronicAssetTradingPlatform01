@@ -80,7 +80,7 @@ public class Goodsadd extends Index{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO 自动生成的方法存根
+
 				name.setText("");
 				style.setText("");
 				number.setText("");
@@ -90,7 +90,7 @@ public class Goodsadd extends Index{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO 自动生成的方法存根
+
 				if(name.getText().equals("") || style.getText().equals("") || number.getText().equals("")) {
 					JOptionPane.showMessageDialog(null,"Please enter a word");
 				} else {
@@ -106,7 +106,7 @@ public class Goodsadd extends Index{
 						number.setText("");
 						JOptionPane.showMessageDialog(null, "success");
 					} catch (SQLException e1) {
-						// TODO 自动生成的 catch 块
+
 						e1.printStackTrace();
 					}
 				}

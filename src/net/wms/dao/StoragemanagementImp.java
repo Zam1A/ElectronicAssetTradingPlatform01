@@ -12,14 +12,14 @@ import net.wms.util.DB;
 public class StoragemanagementImp implements Storagemanagement{
 			public static Vector vec = new Vector();
 			public static Vector vr = new Vector();
-			//��ȡ���ݿ�����
+
 			Connection conn = DB.getConnection();
-			//��ѯ����
+
 			public void Query(String sql) throws SQLException {
 				// TODO Auto-generated method stub
-				//����SQL���
+
 				PreparedStatement pra = conn.prepareStatement(sql);
-				//��������
+
 				ResultSet rs = pra.executeQuery();
 				vec.removeAllElements();
 				while(rs.next()) {
@@ -35,9 +35,9 @@ public class StoragemanagementImp implements Storagemanagement{
 			
 			public void Query1(String sql) throws SQLException {
 				// TODO Auto-generated method stub
-				//����SQL���
+
 				PreparedStatement pra = conn.prepareStatement(sql);
-				//��������
+
 				ResultSet rs = pra.executeQuery();
 				vr.removeAllElements();
 				while(rs.next()) {

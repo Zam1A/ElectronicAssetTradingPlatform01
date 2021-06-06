@@ -25,17 +25,17 @@ public class Storageadd extends IndexAdmin{
 		init();
 	}
 	public void init() {
-		Font d = new Font("楷体", Font.BOLD, 24);
-		Font f = new Font("楷体", Font.BOLD, 18);
-		JLabel storagetitle = new JLabel("仓库添加");
-		JLabel storagename = new JLabel("仓库名：");
+		Font d = new Font("", Font.BOLD, 24);
+		Font f = new Font("", Font.BOLD, 18);
+		JLabel storagetitle = new JLabel("add order");
+		JLabel storagename = new JLabel("name：");
 		name = new JTextField();
-		JLabel storagestyle = new JLabel("类  型：");
+		JLabel storagestyle = new JLabel("type：");
 		style = new JTextField();
-		JLabel storageid = new JLabel("编  号：");
+		JLabel storageid = new JLabel("id：");
 		id = new JTextField();
-		JButton submit = new JButton("提交");
-		JButton reset = new JButton("重置");
+		JButton submit = new JButton("commit");
+		JButton reset = new JButton("reset");
 		storagetitle.setBounds(230, 60, 100, 40);
 		storagetitle.setFont(d);
 		storagename.setBounds(160, 140, 80, 30);
@@ -67,7 +67,7 @@ public class Storageadd extends IndexAdmin{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO 自动生成的方法存根
+
 				name.setText("");
 				style.setText("");
 				id.setText("");
@@ -77,9 +77,9 @@ public class Storageadd extends IndexAdmin{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO 自动生成的方法存根
+
 				if(name.getText().equals("") || style.getText().equals("") || id.getText().equals("")) {
-					JOptionPane.showMessageDialog(null,"请输入内容");
+					JOptionPane.showMessageDialog(null,"");
 				} else {
 					storage.setStoragename(name.getText());
 					storage.setStoragestyle(style.getText());
@@ -90,9 +90,9 @@ public class Storageadd extends IndexAdmin{
 						name.setText("");
 						style.setText("");
 						id.setText("");
-						JOptionPane.showMessageDialog(null, "添加成功");
+						JOptionPane.showMessageDialog(null, "success");
 					} catch (SQLException e1) {
-						// TODO 自动生成的 catch 块
+
 						e1.printStackTrace();
 					}
 				}
