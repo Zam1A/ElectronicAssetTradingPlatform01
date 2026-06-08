@@ -28,11 +28,11 @@ public class Storageadd extends IndexAdmin{
 		Font d = new Font("", Font.BOLD, 24);
 		Font f = new Font("", Font.BOLD, 18);
 		JLabel storagetitle = new JLabel("add order");
-		JLabel storagename = new JLabel("name：");
+		JLabel storagename = new JLabel("name:");
 		name = new JTextField();
-		JLabel storagestyle = new JLabel("type：");
+		JLabel storagestyle = new JLabel("type:");
 		style = new JTextField();
-		JLabel storageid = new JLabel("id：");
+		JLabel storageid = new JLabel("id:");
 		id = new JTextField();
 		JButton submit = new JButton("commit");
 		JButton reset = new JButton("reset");

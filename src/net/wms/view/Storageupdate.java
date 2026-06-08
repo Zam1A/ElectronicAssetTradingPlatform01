@@ -36,19 +36,19 @@ public class Storageupdate extends IndexAdmin{
 		Font t = new Font("",Font.BOLD, 24);
 		final Font f = new Font("",Font.BOLD, 15);
 		JLabel title = new JLabel("info");
-		JLabel storagename = new JLabel("name：");
+		JLabel storagename = new JLabel("name:");
 		storagename.setBounds(160, 220, 80, 30);
 		storagename.setFont(f);
 		name = new JTextField();
 		name.setBounds(240, 220, 150, 30);
 		name.setFont(f);
-		JLabel storagestyle = new JLabel("type：");
+		JLabel storagestyle = new JLabel("type:");
 		storagestyle.setBounds(160, 270, 80, 30);
 		storagestyle.setFont(f);
 		style = new JTextField();
 		style.setBounds(240, 270, 150, 30);
 		style.setFont(f);
-		JLabel storageid = new JLabel("no：");
+		JLabel storageid = new JLabel("no:");
 		storageid.setBounds(160, 320, 80, 30);
 		storageid.setFont(f);
 		s_id = new JTextField();
@@ -57,7 +57,7 @@ public class Storageupdate extends IndexAdmin{
 		title.setFont(t);
 		title.setBounds(230, 30, 100, 30);
 		final Vector c = new Vector();
-		//添加数据
+		// Add data.
 		c.add("no");
 		c.add("name");
 		c.add("type");
@@ -97,7 +97,7 @@ public class Storageupdate extends IndexAdmin{
 		final JScrollPane js = new JScrollPane(table);
 		js.setBounds(100, 70, 400, 130);
 
-		final JButton update = new JButton("修改");
+		final JButton update = new JButton("Update");
 
 		update.addActionListener(new ActionListener() {
 
@@ -106,13 +106,13 @@ public class Storageupdate extends IndexAdmin{
 				// TODO Auto-generated method stub
 
 				if(id == 0){
-					JOptionPane.showMessageDialog(null, "修改失败请选择需要修改的记录！");
+					JOptionPane.showMessageDialog(null, "Update failed. Please select a record.");
 				}else{
 					try {
 
 
 						int mess = JOptionPane.showConfirmDialog(
-								null,"确定修改记录？","友情提示：",
+								null,"Update this record?","Tips:",
 								JOptionPane.YES_NO_OPTION );
 
 						if(mess == 0){
@@ -123,7 +123,7 @@ public class Storageupdate extends IndexAdmin{
 							storage.setStorageID(s_id.getText());
 							s.Update(storage,"update storage set storagename = ?,storagestyle=?,storageID=? where id = "+ id);
 
-							JOptionPane.showMessageDialog(null, "修改成功");
+							JOptionPane.showMessageDialog(null, "Update successful");
 							s.Query("select * from storage");
 
 

@@ -185,7 +185,7 @@ public class ModernTradingPlatform extends JFrame {
         addFormRow(form, role, 0, 7, 1, 0, 24);
         addFormRow(form, signIn, 0, 8, 1, 0, 20);
 
-        JLabel hint = label("Default: admin / 1 or java / 1", 13, Font.PLAIN, MUTED);
+        JLabel hint = label("Default: admin / 123456 or java / 1", 13, Font.PLAIN, MUTED);
         addFormRow(form, hint, 0, 9, 1, 4, 0);
 
         signIn.addActionListener(e -> login(username.getText(), new String(password.getPassword()), role.getSelectedItem().toString()));

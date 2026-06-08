@@ -36,24 +36,23 @@ public class Usernews extends Index{
 			}
 			integrate.setText(user.getIntegrate());
 		} catch (SQLException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
 	}
 
 	public void init() {
 
-		Font d = new Font("楷体", Font.BOLD, 24);
-		Font f = new Font("楷体", Font.BOLD, 18);
+		Font d = new Font("", Font.BOLD, 24);
+		Font f = new Font("", Font.BOLD, 18);
 
 		JLabel usertitle = new JLabel("userinfo");
-		JLabel username = new JLabel("name：");
+		JLabel username = new JLabel("name:");
 		uname = new JLabel();
-		JLabel userpwd = new JLabel("pwd：");
+		JLabel userpwd = new JLabel("pwd:");
 		pwd = new JLabel();
-		JLabel userstyle = new JLabel("type：");
+		JLabel userstyle = new JLabel("type:");
 		style = new JLabel();
-		JLabel userintegrate = new JLabel("integrate：");
+		JLabel userintegrate = new JLabel("integrate:");
 		integrate = new JLabel();
 
 		usertitle.setBounds(230, 60, 200, 40);

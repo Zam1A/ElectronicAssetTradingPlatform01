@@ -51,10 +51,9 @@ java -cp bin net.wms.view.Login
 
 | Username | Password | Type |
 | --- | --- | --- |
-| admin | 1 | admin |
+| admin | 123456 | admin |
 | java | 1 | employee |
 | d | 123 | employee |
-| xiaoming | 1 | employee |
 
 When logging in, make sure the selected account type matches the account.
 

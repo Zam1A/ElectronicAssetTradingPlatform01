@@ -79,7 +79,7 @@ public class Goodsdelete extends Index{
 					try {
 
 						int mess = JOptionPane.showConfirmDialog(
-								null,"Do you really want to delete this record?","friendly tips：",
+								null,"Do you really want to delete this record?","Tips:",
 								JOptionPane.YES_NO_OPTION );
 
 						if(mess == 0){

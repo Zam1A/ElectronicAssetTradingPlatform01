@@ -36,22 +36,22 @@ public class GoodsUpdate extends Index{
 		init(name);
 	}
 	public void init( String names) {
-		Font t = new Font("楷体",Font.BOLD, 24);
-		final Font f = new Font("楷体",Font.BOLD, 15);
+		Font t = new Font("",Font.BOLD, 24);
+		final Font f = new Font("",Font.BOLD, 15);
 		JLabel title = new JLabel("goods");
-		JLabel goodsname = new JLabel("goodsname：");
+		JLabel goodsname = new JLabel("goodsname:");
 		goodsname.setBounds(160, 180, 80, 30);
 		name = new JTextField();
 		name.setBounds(240, 180, 150, 30);
-		JLabel goodsstyle = new JLabel("type：");
+		JLabel goodsstyle = new JLabel("type:");
 		goodsstyle.setBounds(160, 230, 80, 30);
 		style = new JTextField();
 		style.setBounds(240, 230, 150, 30);
-		JLabel goodsnumber = new JLabel("price：");
+		JLabel goodsnumber = new JLabel("price:");
 		goodsnumber.setBounds(160, 280, 80, 30);
 		number = new JTextField();
 		number.setBounds(240, 280, 150, 30);
-		JLabel storageid = new JLabel("userid：");
+		JLabel storageid = new JLabel("userid:");
 		storageid.setBounds(160, 330, 80, 30);
 		StoragemanagementImp s = new StoragemanagementImp();
 
@@ -112,12 +112,12 @@ public class GoodsUpdate extends Index{
 			public void actionPerformed(ActionEvent e) {
 
 				if(id == 0){
-					JOptionPane.showMessageDialog(null, "Please check the attachment！");
+					JOptionPane.showMessageDialog(null, "Please select a record.");
 				}else{
 					try {
 
 						int mess = JOptionPane.showConfirmDialog(
-								null,"Modify the log or modify the record？","Tips：",
+								null,"Modify this record?","Tips:",
 								JOptionPane.YES_NO_OPTION );
 
 

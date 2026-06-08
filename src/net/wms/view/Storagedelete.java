@@ -64,7 +64,7 @@ public class Storagedelete extends IndexAdmin{
 		final JScrollPane js = new JScrollPane(table);
 		js.setBounds(100, 120, 400, 200);
 
-		final JButton delete = new JButton("删除");
+		final JButton delete = new JButton("Delete");
 
 		delete.addActionListener(new ActionListener() {
 
@@ -73,21 +73,21 @@ public class Storagedelete extends IndexAdmin{
 				// TODO Auto-generated method stub
 
 				if(id == 0){
-					JOptionPane.showMessageDialog(null, "删除失败请选择需要删除的记录！");
+					JOptionPane.showMessageDialog(null, "Delete failed. Please select a record.");
 				}else{
 					try {
 
 
 						int mess = JOptionPane.showConfirmDialog(
-								null,"确定删除记录？","友情提示：",
+								null,"Delete this record?","Tips:",
 								JOptionPane.YES_NO_OPTION );
 
-						//0 == 确定 ，1 == 取消
+						// 0 means yes, 1 means no.
 						if(mess == 0){
 
 							s.Delete("delete from storage where id ="+id);
 
-							JOptionPane.showMessageDialog(null, "删除成功");
+							JOptionPane.showMessageDialog(null, "Delete successful");
 							s.Query("select * from storage");
 
 							JTable new_table = new JTable(s.vec,c);

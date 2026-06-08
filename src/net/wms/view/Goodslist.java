@@ -81,12 +81,12 @@ public class Goodslist extends Index {
                 // TODO Auto-generated method stub
 
                 if (id == 0) {
-                    JOptionPane.showMessageDialog(null, "Failed to purchase, please select the record to delete！");
+                    JOptionPane.showMessageDialog(null, "Purchase failed. Please select a record.");
                 } else {
                     try {
 
                         int mess = JOptionPane.showConfirmDialog(
-                                null, "Definitely buy?？", "Helpful hints：",
+                                null, "Buy this asset?", "Tips:",
                                 JOptionPane.YES_NO_OPTION);
 
                         if (mess == 0) {

@@ -31,8 +31,8 @@ public class Userdelete extends IndexAdmin {
 	
 	public void init() {
 
-		Font d = new Font("����", Font.BOLD, 24);
-		Font f = new Font("����", Font.BOLD, 18);
+		Font d = new Font("", Font.BOLD, 24);
+		Font f = new Font("", Font.BOLD, 18);
 
 		JLabel userdelete = new JLabel("DELUSER");
 		JLabel deletename = new JLabel("USERNAME");
@@ -95,7 +95,7 @@ public class Userdelete extends IndexAdmin {
 
 					b = l.Query1(user, "select * from users where username= '"+dname.getText()+"'");
 					if(b){
-						//�����ݿ��е�ֵ���ý��ı���
+						// Copy values from the data store into the labels.
 						name.setText(user.getusername());
 						pwd.setText(user.getuserpwd());
 						style.setText(user.getFlag());

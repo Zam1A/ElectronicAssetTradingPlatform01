@@ -31,13 +31,13 @@ public class Goodsadd extends Index{
 		Font d = new Font("", Font.BOLD, 24);
 		Font f = new Font("", Font.BOLD, 18);
 		JLabel goodstitle = new JLabel("add goods");
-		JLabel goodsname = new JLabel("gname：");
+		JLabel goodsname = new JLabel("gname:");
 		name = new JTextField();
-		JLabel goodsstyle = new JLabel("type：");
+		JLabel goodsstyle = new JLabel("type:");
 		style = new JTextField();
-		JLabel goodsnumber = new JLabel("price：");
+		JLabel goodsnumber = new JLabel("price:");
 		number = new JTextField();
-		JLabel storageid = new JLabel("user：");
+		JLabel storageid = new JLabel("user:");
 
 		id = new JTextField(names);
 		JButton submit = new JButton("commit");

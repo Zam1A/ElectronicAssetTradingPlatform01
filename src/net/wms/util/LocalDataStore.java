@@ -30,10 +30,9 @@ public final class LocalDataStore {
             Files.createDirectories(DATA_DIR);
             if (missingOrEmpty(USERS_FILE)) {
                 writeRows(USERS_FILE, Arrays.asList(
-                        row("1", "admin", "1", "1000", "2"),
+                        row("1", "admin", "123456", "1000", "2"),
                         row("2", "java", "1", "8600", "1"),
-                        row("4", "d", "123", "300", "1"),
-                        row("8", "xiaoming", "1", "10000", "1")));
+                        row("4", "d", "123", "300", "1")));
             }
             if (missingOrEmpty(GOODS_FILE)) {
                 writeRows(GOODS_FILE, Arrays.asList(

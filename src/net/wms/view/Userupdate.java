@@ -27,8 +27,8 @@ public class Userupdate extends Index{
 	
 	public void init(String name) {
 		user.setusername(name);
-		Font d = new Font("����", Font.BOLD, 24);
-		Font f = new Font("����", Font.BOLD, 18);
+		Font d = new Font("", Font.BOLD, 24);
+		Font f = new Font("", Font.BOLD, 18);
 		JLabel usertitle = new JLabel("updatepwd");
 		JLabel username = new JLabel("username");
 		uname = new JLabel();
