@@ -5,12 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -18,13 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 import net.wms.bean.Storage;
 import net.wms.bean.User;
 import net.wms.dao.GoodsmanagementImp;
 import net.wms.dao.LoginUseImp;
 import net.wms.dao.StoragemanagementImp;
-import net.wms.util.DB;
 
 public class Goodslist extends Index {
     int id;
@@ -100,44 +95,25 @@ public class Goodslist extends Index {
                             user.setusername(names);
 
                             try {
-
-                                s.Query("select id, goodsname ,goodsstyle, goodsnumber, storageID  from goods where id =" + id);
                                 Storage storage = new Storage();
+                                storage.setStoragename(table.getValueAt(table.getSelectedRow(), 1).toString());
+                                storage.setStoragestyle(table.getValueAt(table.getSelectedRow(), 2).toString());
+                                storage.setStorageID(table.getValueAt(table.getSelectedRow(), 3).toString());
+                                storage.setSeller(names);
 
-                                Connection conn = DB.getConnection();
-                                PreparedStatement pra = conn.prepareStatement("select id, goodsname ,goodsstyle, goodsnumber, storageID from goods where id =" + id);
-
-                                ResultSet rs = pra.executeQuery();
-                                while (rs.next()) {
-                                    storage.setStoragename(rs.getString("goodsname"));
-                                    storage.setStoragestyle(rs.getString("goodsstyle"));
-                                    storage.setStorageID(rs.getString("goodsnumber"));
-
-                                }
-                                   storage.setSeller(names);
-                                StoragemanagementImp s = new StoragemanagementImp();
-                                s.Add(storage, "insert into storage(storagename,storagestyle,storageID,seller)" + "values(?,?,?,?)");
+                                StoragemanagementImp storageDao = new StoragemanagementImp();
+                                storageDao.Add(storage, "insert into storage(storagename,storagestyle,storageID,seller)" + "values(?,?,?,?)");
 
                                 l.Delete(user, "update users set integrate= integrate -'" + Integer.parseInt(storage.getStorageID()) + "' where username='" + names + "'");
                                 s.Delete(" delete from goods where id =" + id);
                             } catch (SQLException e1) {
                                 e1.printStackTrace();
                                 JOptionPane.showMessageDialog(null, "Purchase failed");
+                                return;
                             }
                             JOptionPane.showMessageDialog(null, "Purchase successful!");
                             s.Query("select * from goods");
-
-                            JTable new_table = new JTable(s.vec, c);
-                            new_table.setFont(f);
-                            new_table.getTableHeader().setFont(f);
-
-                            JScrollPane p = new JScrollPane(new_table);
-
-                            p.setBounds(100, 120, 400, 200);
-
-                            index.remove(js);
-
-                            index.add(p);
+                            table.setModel(new DefaultTableModel(s.vec, c));
                             index.repaint();
                         }
 

@@ -33,18 +33,17 @@ public class GoodsSelect extends IndexAdmin{
 		c.add("price");
 		c.add("user");
 		final GoodsmanagementImp g = new GoodsmanagementImp();
-
-		table = new JTable(g.vec,c);
-		table.setFont(f);
-		table.getTableHeader().setFont(f);
-		final JScrollPane js = new JScrollPane(table);
-		js.setBounds(100, 120, 400, 200);
 		try {
 			g.Query("select * from goods");
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		table = new JTable(g.vec,c);
+		table.setFont(f);
+		table.getTableHeader().setFont(f);
+		final JScrollPane js = new JScrollPane(table);
+		js.setBounds(100, 120, 400, 200);
 		index.add(title);
 		index.add(js);
 	}

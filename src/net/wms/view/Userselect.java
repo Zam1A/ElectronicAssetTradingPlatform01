@@ -37,17 +37,16 @@ public class Userselect extends IndexAdmin{
 		v.add("usertype");
 		v.add("integrate");
 		LoginUseImp l = new LoginUseImp();
-
-		table = new JTable(l.vec,v);
-		table.setFont(f);
-		JScrollPane jp = new JScrollPane(table);
-		jp.setBounds(100, 120, 400, 200);
 		try {
 			l.Select("select * from users");
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
+		table = new JTable(l.vec,v);
+		table.setFont(f);
+		JScrollPane jp = new JScrollPane(table);
+		jp.setBounds(100, 120, 400, 200);
 		index.add(title);
 		index.add(jp);
 	}

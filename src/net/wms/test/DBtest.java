@@ -1,16 +1,14 @@
 package net.wms.test;
 
-import net.wms.util.DB;
-
-import java.sql.Connection;
+import net.wms.util.LocalDataStore;
 
 public class DBtest {
 
     public static void main(String[] args) {
 
        try {
-           Connection conn = DB.getConnection();
-           System.out.println(conn);
+           LocalDataStore.initialize();
+           System.out.println("Local data store is ready.");
        }catch (Exception e){
            e.printStackTrace();
        }

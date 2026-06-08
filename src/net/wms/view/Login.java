@@ -32,10 +32,11 @@ public class Login {
 		JLabel usertyle = new JLabel("userType");
 		JTextField name = new JTextField();
 		JTextField pwd = new JPasswordField();
-		JComboBox box = new JComboBox(new String[]{"admin","employee"} );
+		JComboBox<String> box = new JComboBox<String>(new String[]{"admin","employee"} );
 		JButton login = new JButton("sign in");
 		User user = new User();
 	public void LoginGui() {
+		user.setFlag("2");
 		logingui.setBounds(450, 200, 550, 350);
 		logingui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		logingui.setLayout(null);
@@ -64,10 +65,11 @@ public class Login {
 		logingui.add(login);
 		logingui.setVisible(true);
 		((JComponent) logingui.getContentPane()).setOpaque(false);
-        ImageIcon img = new ImageIcon("Images//0jpg");
-		JLabel background = new JLabel(img);
-		logingui.getLayeredPane().add(background, new Integer(Integer.MIN_VALUE));//����ǩ�Ž�������
-		background.setBounds(0, 0, img.getIconWidth(), img.getIconHeight());//���ñ�ǩ�Ĵ�С
+        ImageIcon img = new ImageIcon("Images//0.jpg");
+		JLabel background = ResponsiveFrameSupport.createBackground(img);
+		logingui.getLayeredPane().add(background, Integer.valueOf(Integer.MIN_VALUE));
+		background.setBounds(0, 0, img.getIconWidth(), img.getIconHeight());
+		ResponsiveFrameSupport.install(logingui, 550, 350, background);
 		box.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -94,11 +96,12 @@ public class Login {
 
 					String state = user.getFlag();
 
-					if(state != "1" && state != "2") {
+					if(!"1".equals(state) && !"2".equals(state)) {
 						state = "2";
 					}
+					user.setFlag(state);
 
-					if(state == "2") {
+					if("2".equals(state)) {
 						try {
 							boolean flag = l.Query(user, "select * from users where username=? and userpwd=? and flag="+state);
 							if(flag) {
@@ -116,7 +119,7 @@ public class Login {
 							e1.printStackTrace();
 						}
 
-				} else if(state == "1") {
+				} else if("1".equals(state)) {
 					try {
 
 						boolean flag = l.Query(user, "select * from users where username=? and userpwd=? and flag="+state);

@@ -1,25 +1,16 @@
 package net.wms.test;
 
-import net.wms.util.DB;
+import net.wms.dao.GoodsmanagementImp;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 public class SelectTest {
 
 
     public void Query(String sql) throws SQLException {
-        Connection conn = DB.getConnection();
-        PreparedStatement pra = conn.prepareStatement(sql);
-        ResultSet rs = pra.executeQuery();
-        while (rs.next()) {
-
-            System.out.println(rs.getInt("id"));
-            System.out.println(rs.getString("goodsname"));
-            System.out.println(rs.getString("goodsstyle"));
-            System.out.println(rs.getInt("goodsnumber"));
-            System.out.println(rs.getString("storageID"));
+        GoodsmanagementImp goodsmanagementImp = new GoodsmanagementImp();
+        goodsmanagementImp.Query(sql);
+        for (Object row : GoodsmanagementImp.vec) {
+            System.out.println(row);
         }
     }
 

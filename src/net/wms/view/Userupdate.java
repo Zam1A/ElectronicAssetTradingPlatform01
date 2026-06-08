@@ -82,6 +82,14 @@ public class Userupdate extends Index{
 
 				LoginUseImp l = new LoginUseImp();
 				try {
+					if(pwd.getText().trim().equals("") || pass.getText().trim().equals("")) {
+						JOptionPane.showMessageDialog(null, "Please enter the new password twice");
+						return;
+					}
+					if(!pwd.getText().equals(pass.getText())) {
+						JOptionPane.showMessageDialog(null, "Passwords do not match");
+						return;
+					}
 					l.Delete(user, "update users set userpwd='"+pass.getText()+"' where username='"+user.getusername()+"'");
 					JOptionPane.showMessageDialog(null, "success");
 				} catch (SQLException e1) {

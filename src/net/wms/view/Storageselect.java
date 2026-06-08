@@ -33,17 +33,17 @@ public class Storageselect extends IndexAdmin{
 		v.add("price");
 		v.add("seller");
 		StoragemanagementImp s = new StoragemanagementImp();
-		table = new JTable(s.vec,v);
-		table.setFont(f);
-		table.getTableHeader().setFont(f);
-		JScrollPane jp = new JScrollPane(table);
-		jp.setBounds(100, 120, 400, 200);
 		try {
 			s.Query("select * from storage");
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
+		table = new JTable(s.vec,v);
+		table.setFont(f);
+		table.getTableHeader().setFont(f);
+		JScrollPane jp = new JScrollPane(table);
+		jp.setBounds(100, 120, 400, 200);
 		index.add(title);
 		index.add(jp);
 	}

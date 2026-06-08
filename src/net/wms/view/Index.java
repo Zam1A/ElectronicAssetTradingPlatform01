@@ -84,9 +84,10 @@ public class Index {
 			default:
 				break;
 		}
-		JLabel background = new JLabel(img);
-		index.getLayeredPane().add(background, new Integer(Integer.MIN_VALUE));
+		JLabel background = ResponsiveFrameSupport.createBackground(img);
+		index.getLayeredPane().add(background, Integer.valueOf(Integer.MIN_VALUE));
 		background.setBounds(0, 20, img.getIconWidth(), img.getIconHeight());
+		ResponsiveFrameSupport.install(index, 600, 500, background);
 		index.setVisible(true);
 	}
 
